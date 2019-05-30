@@ -10,7 +10,9 @@
 ## string.  if we get to the end, return an empty string
 
 ## comes in at 98th percentile for runtime and ~22nd 
-## percentile for memory
+## percentile for memory.  not really necessary to actually
+## sort the words -- could just find the shortest in place,
+## so that should save some RAM and possibly some runtime too.
 
 class Solution:
     def longestCommonPrefix(self, words: List[str]) -> str:
