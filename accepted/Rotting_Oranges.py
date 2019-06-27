@@ -21,8 +21,10 @@
 ## without that speedup I get 88th percentile runtime and 59th percentile 
 ## memory.  I took a quick stab at coding up that speedup and messed it up
 ## because you have to keep track of all possible paths then return the shortest
-## at the end of the walkers, which means there's not actually a speedup 
-## there (unless all walkers have hit a node with a path to rotten I guess...)
+## at the end of the walkers, which means you don't stop walking until all 
+## walkers have hit a node with a path to rotten (or a rotten itself), then 
+## you take the shortest of those.  still a speedup in most (all?) cases,
+## but does require slightly more memory
 
 class Solution:
     def valid_neighbors(self, idx: tuple, visited: set) -> List[tuple]:
